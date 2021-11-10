@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 interface Props {
-  handleCommentSubmit: (event: Event, data: ICommentBody) => void;
+  handleCommentSubmit: (
+    event: React.FormEvent<HTMLFormElement>,
+    data: ICommentBody
+  ) => void;
 }
 interface ICommentBody {
   display_name: string;
@@ -28,7 +31,7 @@ export const FormComments = (props: Props) => {
       <h1>------- Enter Form Comments-------</h1>
       <form
         className="ui form"
-        onSubmit={() => {
+        onSubmit={(event) => {
           props.handleCommentSubmit(event, commentBody);
           setCommentBody({ ...initialCommentBody });
         }}

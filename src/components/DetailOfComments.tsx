@@ -13,7 +13,10 @@ interface Props {
     created_at: Date | null;
     post_id: number;
   }[];
-  handleCommentSubmit: (event: Event, commentBody: ICommentBody) => void;
+  handleCommentSubmit: (
+    event: React.FormEvent<HTMLFormElement>,
+    commentBody: ICommentBody
+  ) => void;
 }
 
 export const DetailOfComments = (props: Props) => {
