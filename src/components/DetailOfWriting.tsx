@@ -50,7 +50,10 @@ export const DetailOfWriting = () => {
       });
   }, []);
 
-  const handleCommentSubmit = (event: Event, commentBody: ICommentBody) => {
+  const handleCommentSubmit = (
+    event: React.FormEvent<HTMLFormElement>,
+    commentBody: ICommentBody
+  ) => {
     api()
       .post(`/posts/${params.id}/comments`, commentBody)
       .then((response) => {
