@@ -25,9 +25,12 @@ interface ICommentBody {
 
 export const DetailOfWriting = () => {
   let params = useParams();
-  const [detailOfWritnig, setDetailOfWriting] = useState<IDetail>(
-    {} as IDetail
-  );
+  const [detailOfWritnig, setDetailOfWriting] = useState<IDetail>({
+    id: 0,
+    title: "",
+    content: "",
+    created_at: null
+  });
   const [comments, setComments] = useState<IComments[]>([]);
 
   useEffect(() => {
